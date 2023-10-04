@@ -229,7 +229,7 @@ input[type="radio"]:focus + label:focus {
   padding: 0.5em 1.25em;
   border-radius: 25px;
   color: var(--clr-accent);
-  margin-bottom: 1rem;
+  margin-bottom: 1.05rem;
 }
 
 .result h2 {
