@@ -78,7 +78,7 @@ h6 {
   --clr-card-bg: hsl(213, 19%, 18%);
   --clr-body-bg: hsl(216, 12%, 8%);
   --clr-btn-text: hsl(216, 8%, 52%);
-  --clr-btn-bg: hsl(210, 19%, 18%);
+  --clr-btn-bg: hsl(213, 17%, 20%);
   --fs-text: 0.9375rem;
   --ff-main: "Overpass", sans-serif;
   --fw-main: 400;
@@ -110,6 +110,16 @@ main {
   gap: 1.1rem;
   border-radius: 20px;
   margin-inline: auto;
+}
+
+.card.submitted {
+  display: none;
+}
+
+.star {
+  background-color: var(--clr-btn-bg);
+  border-radius: 50%;
+  padding: 1em;
 }
 
 .heading {
@@ -189,8 +199,4 @@ input[type="radio"]:focus + label:focus {
   justify-content: space-between;
   border: none;
   margin-bottom: 1.1em;
-}
-
-.result {
-  display: none;
 }
