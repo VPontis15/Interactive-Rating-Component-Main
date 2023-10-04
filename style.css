@@ -79,6 +79,7 @@ h6 {
   --clr-body-bg: hsl(216, 12%, 8%);
   --clr-btn-text: hsl(216, 8%, 52%);
   --clr-btn-bg: hsl(213, 17%, 20%);
+  --clr-linear: hsl(209, 51%, 12%);
   --fs-text: 0.9375rem;
   --ff-main: "Overpass", sans-serif;
   --fw-main: 400;
@@ -102,12 +103,17 @@ main {
   place-items: center;
 }
 
-.card {
-  background-color: var(--clr-card-bg);
-  max-width: min(95%, 400px);
-  padding: 2.5em;
+.card,
+.result {
+  background: linear-gradient(
+    to bottom,
+    var(--clr-card-bg),
+    var(--clr-linear) 95%
+  );
+  max-width: min(90%, 400px);
+  padding: 2em;
   display: grid;
-  gap: 1.1rem;
+  gap: 1.25rem;
   border-radius: 20px;
   margin-inline: auto;
 }
@@ -127,14 +133,17 @@ main {
   font-weight: var(--fw-bold);
 }
 
-input[type="radio"] {
-  font-size: 1.25rem;
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  margin-bottom: 1.4em;
 }
 
 #submit {
   background-color: var(--clr-accent);
   border: none;
-  padding: 1em;
+  padding: 0.75em 1em;
   border-radius: 25px;
   color: white;
   text-transform: uppercase;
@@ -144,11 +153,16 @@ input[type="radio"] {
   display: block;
   width: 100%;
   max-width: 100%;
+  font-size: 0.875rem;
 }
 
 #submit:hover {
   background-color: white;
   color: var(--clr-accent);
+}
+
+#submit:focus {
+  outline: 1px solid #fff;
 }
 form {
   display: grid;
@@ -193,10 +207,37 @@ input[type="radio"]:not(:checked):hover + label {
 input[type="radio"]:focus + label:focus {
   background-color: var(--clr-btn-hover);
 }
+input[type="radio"]:checked:focus + label {
+  background-color: var(--clr-btn-hover);
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+}
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  border: none;
-  margin-bottom: 1.1em;
+.result {
+  text-align: center;
+  color: var(--clr-btn-hover);
+}
+
+.result.hidden {
+  display: none;
+}
+
+.result img {
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+
+.result-text {
+  width: fit-content;
+  margin-inline: auto;
+  background-color: var(--clr-btn-bg);
+  padding: 0.5em 1.25em;
+  border-radius: 25px;
+  color: var(--clr-accent);
+  margin-bottom: 1rem;
+}
+
+.result h2 {
+  color: var(--clr-white);
+  font-size: 1.75rem;
 }
