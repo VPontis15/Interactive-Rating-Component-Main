@@ -77,9 +77,120 @@ h6 {
   --clr-accent: hsl(25, 97%, 53%);
   --clr-card-bg: hsl(213, 19%, 18%);
   --clr-body-bg: hsl(216, 12%, 8%);
-
+  --clr-btn-text: hsl(216, 8%, 52%);
+  --clr-btn-bg: hsl(210, 19%, 18%);
   --fs-text: 0.9375rem;
   --ff-main: "Overpass", sans-serif;
   --fw-main: 400;
   --fw-bold: 700;
+}
+
+body {
+  font-size: var(--fs-text);
+  background-color: var(--clr-body-bg);
+  color: var(--clr-text);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: var(--ff-main);
+  font-weight: var(--fw-main);
+}
+
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  background-color: var(--clr-card-bg);
+  max-width: min(95%, 400px);
+  padding: 2.5em;
+  display: grid;
+  gap: 1.1rem;
+  border-radius: 20px;
+  margin-inline: auto;
+}
+
+.heading {
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+}
+
+input[type="radio"] {
+  font-size: 1.25rem;
+}
+
+#submit {
+  background-color: var(--clr-accent);
+  border: none;
+  padding: 1em;
+  border-radius: 25px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: 0.35s;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+#submit:hover {
+  background-color: white;
+  color: var(--clr-accent);
+}
+form {
+  display: grid;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+label {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 0.75em 1.25em;
+  border: 1px solid var(--clr-body-bg);
+  background-color: var(--clr-btn-bg);
+  color: var(--clr-btn-text);
+  font-weight: var(--fw-bg);
+  cursor: pointer;
+  transition: 0.35s;
+  display: block;
+  border: none;
+}
+
+.btn:hover {
+  background-color: var(--clr-btn-hover);
+  color: white;
+  font-weight: var(--fw-bold);
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--clr-accent);
+  color: var(--clr-white);
+}
+input[type="radio"]:not(:checked):hover + label {
+  background-color: var(--clr-btn-hover);
+  color: var(--clr-white);
+  font-weight: var(--fw-bold);
+}
+
+input[type="radio"]:focus + label:focus {
+  background-color: var(--clr-btn-hover);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  margin-bottom: 1.1em;
+}
+
+.result {
+  display: none;
 }
